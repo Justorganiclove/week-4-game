@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>
+        Crystal Collectors Game - Week 4 -
+    </title>
+</head>
+
+<body>
+    <section id="mainbody">
+        <h1>Crystal Collectors</h1>
+            <ul>
+                <li id="instructions">
+                    Instructions
+                </li>
+                <li>
+                    To start playing, press any key to get a random numbered assigned that you must match.
+                </li>
+                <li>
+                    There are four crystals below that hold magical amount of points. Clicking them will add those points to your score.
+                </li>
+                <li>
+                    You win the game by matching your total score to the magical random number given by the crystals.
+                    <br> You Loose the game if your total score goes above the random number.
+                </li>
+            </ul>
+        </p>
+        <div id="numberToMatchCounter"> Number to Match:</div>
+        <div id="yourScoreCounter"> Your Score:</div>
+        <div id="numberToMatch"> Number to Match</div>
+        <div id="yourScore"> 00</div>
+        <section id="crystalCastles">
+            <img id="crystal1 crystalPoints1"  onclick="addingyourScore" src="assets/images/ruby.jpg" alt="crystal 1">
+            <img id="crystal2 crystalPoints2" src="assets/images/ruby.jpg" alt="crystal 2">
+            <img id="crystal3 crystalPoints3" src="assets/images/ruby.jpg" alt="crystal 3">
+            <img id="crystal4 crystalPoints4" src="assets/images/ruby.jpg" alt="crystal 4">
+        </section>
+        <div id="scoreboard">
+            <p id="wins">Wins:</p>
+            <p id="loses">Loses:</p>
+            <div>
+    </section>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+</body>
+
+</html>
