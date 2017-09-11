@@ -1,43 +1,84 @@
-//Assign random Number to match at the start of the game:
+var yourScore;
+var wins;
+var losses;
+var numberToMatch;
+var crystalPointsUno;
+var crystalPointsDos;
+var crystalPointsTres;
+var crystalPointsCuatro;
 
 function startGame() {
     var numberToMatch = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
-    document.getElementById("numberToMatch").innerHTML = numberToMatch;
-    // for testing purposes:
-    console.log(numberToMatch);
+    $("#numberToMatch").text(numberToMatch);
+    yourScore = 0;
+    $("#yourScore").text(yourScore);
+
 }
-startGame();
+function crystalRandomizer(){
+    crystalPointsUno = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
+    crystalPointsDos = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
+    crystalPointsTres = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
+    crystalPointsCuatro = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
+}
 
-//Designate random hidden values to each crystal between 1-12:
-var crystalPoints1 = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
+function starter(){
+    startGame();
+    crystalRandomizer();
+};
+starter();
 
-var crystalPoints2 = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
+function whoWon() {
+    if($("#numberToMatch") === ($("#yourScore"))) {
+        wins += 1
+        $("#wins").text("Wins: " + wins);
+        console.log("Great Job - You have a pocket full of Crystals")
+      
+    };
+    if ($("#numberToMatch") < ($("#yourScore"))) {
+        losses += 1
+        $("#losses").text("Losses: " + losses);
+        console.log("You were so close, try again to collect them all!")
+        starter();
+    };
+}
+$("#crystalUno").on("click", function() {
+        yourScore += crystalPointsUno;
+        $("#yourScore").text(yourScore);
+        alert(" This crystal added " + crystalPointsUno + " magical points to your score");
+        whoWon(); 
+    });
 
-var crystalPoints3 = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
+    $("#crystalDos").on("click", function() {
+        yourScore += crystalPointsDos;
+        $("#yourScore").text(yourScore);
+        // $("#yourscore").text(crystalPointsDos); 
+        alert(" This crystal added " + crystalPointsDos + " magical points to your score"); 
+    });
 
-var crystalPoints4 = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
+    $("#crystalTres").on("click", function() {
+        yourScore += crystalPointsTres;
+        $("#yourScore").text(yourScore);
+        alert(" This crystal added " + crystalPointsTres + " magical points to your score"); 
 
+    });
 
-//For testing purposes: is there a way to show all these in a single line in console?
-console.log("Crystal1: " + crystalPoints1);
-console.log("Crystal2: " + crystalPoints2);
-console.log("Crystal3: " + crystalPoints3);
-console.log("Crystal4: " + crystalPoints4);
-
-
-//Clicking each crystal adds up that number to Yourscore
-$(function() {
-    $("#crystal1").click(function() {
-        document.getElementById("crystalPoints1").innerHTML = yourScore;
-    })
-
-});
+    $("#crystalCuatro").on("click", function() {
+        yourScore += crystalPointsCuatro;
+        $("#yourScore").text(yourScore);
+        alert(" This crystal added " + crystalPointsCuatro + " magical points to your score"); 
+    });
 
 
 
-//Restart function when the player wins or looses
 
-//Record Scoreboard of Wins and losses
+
+
+
+
+
+
+
+
 
 
 //***Do not refresh the page in order to start the game

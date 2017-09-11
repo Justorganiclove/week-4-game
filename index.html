@@ -2,9 +2,10 @@
 <html>
 
 <head>
-	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <title>
         Crystal Collectors Game - Week 4 -
     </title>
@@ -13,35 +14,32 @@
 <body>
     <section id="mainbody">
         <h1>Crystal Collectors</h1>
-            <ul>
-                <li id="instructions">
-                    Instructions
-                </li>
-                <li>
-                    To start playing, press any key to get a random numbered assigned that you must match.
-                </li>
-                <li>
-                    There are four crystals below that hold magical amount of points. Clicking them will add those points to your score.
-                </li>
-                <li>
-                    You win the game by matching your total score to the magical random number given by the crystals.
-                    <br> You Loose the game if your total score goes above the random number.
-                </li>
-            </ul>
+        <ul>
+            <li id="instructions">
+                Instructions
+            </li>
+            <li>
+                To start playing, press any key to get a random numbered assigned that you must match.There are four crystals below that hold magical amount of points. Clicking them will add those points to your score.
+                <br>
+            </li>
+            <li>
+                You win the game by matching your total score to the magical random number given by the crystals. You loose the game if your total score goes above the random number.
+            </li>
+        </ul>
         </p>
         <div id="numberToMatchCounter"> Number to Match:</div>
         <div id="yourScoreCounter"> Your Score:</div>
-        <div id="numberToMatch"> Number to Match</div>
-        <div id="yourScore"> 00</div>
+        <div id="numberToMatch"> </div>
+        <div id="yourScore">0</div>
         <section id="crystalCastles">
-            <img id="crystal1 crystalPoints1"  onclick="addingyourScore" src="assets/images/ruby.jpg" alt="crystal 1">
-            <img id="crystal2 crystalPoints2" src="assets/images/ruby.jpg" alt="crystal 2">
-            <img id="crystal3 crystalPoints3" src="assets/images/ruby.jpg" alt="crystal 3">
-            <img id="crystal4 crystalPoints4" src="assets/images/ruby.jpg" alt="crystal 4">
+            <img id="crystalUno" src="assets/images/1.png" alt="crystal 1">
+            <img id="crystalDos" src="assets/images/2.png" alt="crystal 2">
+            <img id="crystalTres" src="assets/images/3.png" alt="crystal 3">
+            <img id="crystalCuatro" src="assets/images/4.png" alt="crystal 4">
         </section>
         <div id="scoreboard">
-            <p id="wins">Wins:</p>
-            <p id="loses">Loses:</p>
+            <p id="wins">Wins: 0 </p>
+            <p id="losses">Losses: 0</p>
             <div>
     </section>
     <script type="text/javascript" src="assets/javascript/game.js"></script>

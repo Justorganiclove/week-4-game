@@ -1,15 +1,20 @@
 body {
     background-color: black;
     line-height: 140%;
+    font-family: 'Open Sans', sans-serif;
+    background-image: url("../images/gemsbackground.png");
+/*    https://www.shutterstock.com/image-vector/seamless-vector-pattern-linear-jewels-outline-526879321*/
 }
 
-h1 {
+h1 {    
     background: black;
+    color: white;
     text-align: center;
     width: 50%;
     margin: 0 auto 0 auto;
+    font-size: 2em;
     padding: 20px;
-    color: white;
+    line-height: 100%;
 }
 
 p {
@@ -28,7 +33,7 @@ img {
 }
 
 #mainbody {
-    max-width: 50%;
+    max-width: 65%;
     height: 100%;
     margin: 0 auto 0 auto;
     padding: 20px;
@@ -39,7 +44,8 @@ img {
     font-weight: bold;
     margin: 0 auto 0 auto;
     width: 20%;
-    list-style-type: none
+    list-style-type: none;
+    text-decoration: underline;
 }
 
 #numberToMatch {
@@ -50,6 +56,7 @@ img {
     background-color: violet;
     padding: 20px 0 20px 0;
     float: left;
+  
 }
 
 #numberToMatchCounter {
@@ -58,6 +65,9 @@ img {
     text-align: center;
     background-color: violet;
     float: left;
+    text-decoration: underline;
+    
+
 }
 
 #yourScore {
@@ -68,6 +78,7 @@ img {
     float: right;
     padding: 20px 0 20px 0;
     font-size: 3em;
+
 }
 
 #yourScoreCounter {
@@ -76,6 +87,7 @@ img {
     text-align: center;
     background-color: chartreuse;
     float: right;
+    text-decoration: underline;
 }
 
 #crystalCastles {
@@ -91,12 +103,13 @@ img {
     font-weight: bold;
 }
 
-#loses {
+#losses {
     max-width: 50%;
     margin: 0 auto 0 auto;
     font-weight: bold;
 }
 
 #scoreboard{
+    background-color: white;
 	
 }
