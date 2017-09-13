@@ -1,22 +1,15 @@
-// Global Scope __________________________________________________________________________________________________________
 
-var yourScore; 
-var wins;
-var losses;
-var numberToMatch;
+var wins = 0;
+var losses = 0;
 var crystalPointsUno;
 var crystalPointsDos;
 var crystalPointsTres;
 var crystalPointsCuatro;
 
-//  Local Scope of function Start Game__________________________________________________________________________________________________________
 
-function startGame() {
-    var numberToMatch = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
-    $("#numberToMatch").text(numberToMatch);
-}
+var numberToMatch = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+$("#numberToMatch").text(numberToMatch);
 
-//  Local Scope of function crystalRandomizer____________________________________________________________________________________________________
 
 function crystalRandomizer(){
     crystalPointsUno = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
@@ -25,69 +18,78 @@ function crystalRandomizer(){
     crystalPointsCuatro = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
 }
 
-//  Local Scope of starter_______________________________________________________________________________________________________________________
 function starter(){
-    yourScore = 0; ///not sure if this is part of the problem
-    startGame();
+    yourScore = 0; 
     crystalRandomizer();
 }
 
-starter(); /// Global execution of the starter function;
+starter();
 
-//  Local Scope of whoWon_______________________________________________________________________________________________________________________
 function whoWon() {
     if (numberToMatch === yourScore) {
-        console.log(test);////this isn't showing up
+        console.log("test");////this isn't showing up
         wins += 1;
         $("#wins").text("Wins: " + wins);
-        console.log("Great Job - You have a pocket full of Crystals");
+        alert("Winner, winner Chicken Dinner! You have a pocket full of Crystals");
+        
+         ///The game is not resetting after a win or loss--gotta make this work
+        function reset() {
+            numberToMatch = 0;
+            yourScore =0;
+            };
+        reset();
+    
       
     };
     if (numberToMatch < yourScore) {
         losses += 1;
         $("#losses").text("Losses: " + losses);
-        console.log("You were so close, try again to collect them all!");
-        starter();
+        alert("You were so close, try again to collect them all!");
+
+        ///The game is not resetting after a win or loss--gotta make this work
+        function reset() {
+            numberToMatch = 0;
+            yourScore = 0;
+            };
+        reset();
+ 
+       
     };
 }
-//  End of local Scope of whoWon_______________________________________________________________________________________________________________________
 
-// Local Scope of on click crystalUno function__________________________________________________________________________________________________________
 $("#crystalUno").on("click", function() {
-        whoWon(); 
         yourScore += crystalPointsUno;
         $("#yourScore").text(yourScore);
+        console.log("Player Score:" +yourScore);
         alert(" This crystal added " + crystalPointsUno + " magical points to your score");
+        whoWon(); 
         
 });
 
-// Local Scope of on click crystalDos function__________________________________________________________________________________________________________
+
 $("#crystalDos").on("click", function() {
-    whoWon(); 
     yourScore += crystalPointsDos;
     $("#yourScore").text(yourScore);
     alert(" This crystal added " + crystalPointsDos + " magical points to your score"); 
+    whoWon(); 
 
 });
 
-// Local Scope of on click crystalTres function__________________________________________________________________________________________________________
+
 $("#crystalTres").on("click", function() {
-    whoWon(); 
     yourScore += crystalPointsTres;
     $("#yourScore").text(yourScore);
     alert(" This crystal added " + crystalPointsTres + " magical points to your score"); 
+    whoWon(); 
   
 });
 
-// Local Scope of on click crystalCuatrofunction__________________________________________________________________________________________________________
 
 $("#crystalCuatro").on("click", function() {
-    whoWon(); 
     yourScore += crystalPointsCuatro;
     $("#yourScore").text(yourScore);
     alert(" This crystal added " + crystalPointsCuatro + " magical points to your score"); 
+    whoWon(); 
    
 });
-
-
 
