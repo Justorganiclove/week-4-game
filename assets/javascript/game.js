@@ -31,7 +31,7 @@ function whoWon() {
         wins += 1;
         $("#wins").text("Wins: " + wins);
         alert("Winner, winner Chicken Dinner! You have a pocket full of Crystals");
-        
+
          ///The game is not resetting after a win or loss--gotta make this work
         function reset() {
             numberToMatch = 0;
@@ -44,9 +44,10 @@ function whoWon() {
     if (numberToMatch < yourScore) {
         losses += 1;
         $("#losses").text("Losses: " + losses);
+
         alert("You were so close, try again to collect them all!");
 
-        ///The game is not resetting after a win or loss--gotta make this work
+        ///The game is not resetting after a win or loss--gotta make this work/////
         function reset() {
             numberToMatch = 0;
             yourScore = 0;
@@ -60,7 +61,6 @@ function whoWon() {
 $("#crystalUno").on("click", function() {
         yourScore += crystalPointsUno;
         $("#yourScore").text(yourScore);
-        console.log("Player Score:" +yourScore);
         alert(" This crystal added " + crystalPointsUno + " magical points to your score");
         whoWon(); 
         
