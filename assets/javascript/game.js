@@ -5,6 +5,7 @@ var crystalPointsUno;
 var crystalPointsDos;
 var crystalPointsTres;
 var crystalPointsCuatro;
+var yourScore = 0;
 
 
 var numberToMatch = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
@@ -25,36 +26,27 @@ function starter(){
 
 starter();
 
+function reset(){
+numberToMatch = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+$("#numberToMatch").text(numberToMatch);
+yourScore = 0;
+$("#yourScore").text(0);
+}
+
 function whoWon() {
     if (numberToMatch === yourScore) {
-        console.log("test");////this isn't showing up
         wins += 1;
         $("#wins").text("Wins: " + wins);
-        alert("Winner, winner Chicken Dinner! You have a pocket full of Crystals");
-
-         ///The game is not resetting after a win or loss--gotta make this work
-        function reset() {
-            numberToMatch = 0;
-            yourScore =0;
-            };
         reset();
+        alert("Winner, Winner Chicken Dinner!");
     
       
     };
     if (numberToMatch < yourScore) {
         losses += 1;
         $("#losses").text("Losses: " + losses);
-
-        alert("You were so close, try again to collect them all!");
-
-        ///The game is not resetting after a win or loss--gotta make this work/////
-        function reset() {
-            numberToMatch = 0;
-            yourScore = 0;
-            };
         reset();
- 
-       
+        alert("You were so close to winning, try again to collect them all!"); 
     };
 }
 
@@ -92,4 +84,8 @@ $("#crystalCuatro").on("click", function() {
     whoWon(); 
    
 });
+///Still need to work on the following:
+///the game doesn't display the final score before alerting of a win or loss--- need to fix this
+///
+
 
